@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#8ff4ff), to(#1b2e30));
+  background: linear-gradient(90deg, #8ff4ff, #1b2e30);
+  height: 10%;
+  width: 100%;
+}
+
+.logo {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.logo div:nth-child(1) {
+  color: #102e54;
+  border: solid 4px;
+  padding: 12px;
+}
+
+.logo div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #102e54;
+  color: #73c8d1;
+  padding: 12px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  width: 17%;
+}
+
+.nav span:hover {
+  cursor: pointer;
+}
+
+.canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+  background: #eee;
+}
+
+.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  -webkit-box-shadow: 0px 1px 5px #BDBDBD;
+          box-shadow: 0px 1px 5px #BDBDBD;
+  width: 70%;
+  height: 25%;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.display__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15%;
+}
+
+.display__info ul:nth-child(1) {
+  list-style-type: none;
+  text-align: right;
+  width: 50%;
+  color: #757575;
+}
+
+.display__info ul:nth-child(2) {
+  padding: 0 10px;
+  list-style-type: none;
+  width: 50%;
+  font-weight: bold;
+  color: #102e54;
+}
+
+.display__info li {
+  margin: 10px 0;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+  height: auto;
+}
+
+.card {
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 420px;
+  margin: 10px 0;
+  -webkit-box-shadow: 0px 1px 5px #BDBDBD;
+          box-shadow: 0px 1px 5px #BDBDBD;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.card ul {
+  list-style-type: none;
+}
+
+.card li:nth-child(1) {
+  font-weight: bold;
+  color: #102e54;
+}
+
+.card li:nth-child(2) {
+  color: #757575;
+}
+
+.card img {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  left: -99999px;
+  position: absolute;
+}
+
+input[type="radio"]:checked + .card {
+  background: #102e54;
+}
+
+input[type="radio"]:checked + .card li:nth-child(1),
+input[type="radio"]:checked + .card li:nth-child(2) {
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */
