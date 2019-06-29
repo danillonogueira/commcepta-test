@@ -30,6 +30,12 @@ $palette: (
   }
 }
 
+@mixin mobile {
+  @media(max-width: 375px) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -56,20 +62,14 @@ body {
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(90deg, color(primary), color(dark-primary));
-  height: 10%;
+  min-height: 10%;
   width: 100%;
 
-  // @include iPadPro {
-  //   justify-content: space-between;
-  //   height: 5%;
-  //   padding: 50px;
-  // }
-
-  // @include iPad {
-  //   height: 10%;
-  //   justify-content: space-between;
-  //   padding: 25px;
-  // }
+  @include iPadPro {
+    justify-content: space-between;
+    height: 5%;
+    padding: 0 10px;
+  }
 }
 
 .logo {
@@ -83,6 +83,10 @@ body {
     color: color(secondary);
     border: solid 4px;
     padding: 12px;
+
+    @include mobile {
+      padding: 8px;
+    }
   }
 
   & div:nth-child(2) {
@@ -93,9 +97,9 @@ body {
     padding: 12px;
   }
 
-  // @include iPad {
-  //   transform: scale(.8);
-  // }
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 .nav {
@@ -110,13 +114,18 @@ body {
     cursor: pointer;
   }
 
-  // @include fixNavBreakpoint {
-  //   width: 255px;
-  // }
+  @include fixNavBreakpoint {
+    width: 255px;
+  }
 
-  // @include iPad {
-  //   font-size: 14px;
-  // }
+  @include iPad {
+    font-size: 14px;
+  }
+
+  @include mobile {
+    width: 180px;
+    font-size: 10px;
+  }
 }
 
 // CANVAS
@@ -127,14 +136,6 @@ body {
   height: 90%;
   background: #eee;
   width: 100%;
-
-  // @include iPadPro {
-  //   height: 95%;
-  // }
-
-  // @include iPad {
-  //   height: 90%;
-  // }
 }
 
 // DISPLAY
@@ -143,8 +144,8 @@ body {
   align-items: center;
   background: #fff;
   box-shadow: 0px 1px 5px #BDBDBD; 
-  width: 70%;
-  height: 30%;
+  width: 63%;
+  min-height: 140px;
   margin: 20px 0;
   padding: 0 20px;
   z-index: 1;
@@ -177,38 +178,39 @@ body {
     }
   }
 
-  // @include iPadPro {
-  //   width: 100%;
-  //   margin: 0;
-  //   height: 150px;
-  // }
+  @include iPadPro {
+    width: 100%;
+    margin: 0;
+    height: 150px;
+  }
 }
 
 // LIST
 .list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 70%;
-  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-gap: 20px 40px;
+  width: 63%;
   z-index: 0;
 
-  // @include iPadPro {
-  //   width: 80%;
-  //   margin: 0;
-  //   overflow: scroll;
-  // }
+  @include iPadPro {
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    overflow: scroll;
+  }
+
+  @include iPad {
+    grid-gap: 0;
+  }
 }
 
 .card {
   background: #fff;
   display: flex;
   align-items: center;
-  width: 420px;
-  height: 150px; 
   box-shadow: 0px 1px 5px #BDBDBD;
   transition: background .3s;
-  margin: 10px 0;
 
   & ul {
     list-style-type: none;
@@ -226,10 +228,6 @@ body {
   & img {
     transform: scale(.8);
   }
-
-  // @include iPad {
-  //   width: 350px;
-  // }
 }
 
 .card:hover {
