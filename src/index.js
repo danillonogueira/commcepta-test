@@ -12,12 +12,12 @@ function clickDev(event) {
   if (event.target.getAttribute('data-index')) {
     const id = parseInt(event.target.getAttribute('data-index'));
     let dev = null;
+
     api.forEach((developer) => {
       if (developer.id === id) {
         dev = developer;
       }
-    });
-    
+    });   
     $('.display').innerHTML = `
       <img src="${require(`./assets/${formatPhoto(dev.foto)}`)}">
       <div class="display__info">
