@@ -30,6 +30,6 @@ export class ListView extends View {
         })
         .join('')
       }
-    `
+    `;
   }
 }
