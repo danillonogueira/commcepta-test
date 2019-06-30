@@ -17,6 +17,6 @@ export class PersonView extends View {
             <li>${model.idade}</li>
           </ul>
         </div>
-      `
+      `;
   }
 }
