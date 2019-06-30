@@ -8,7 +8,7 @@ JavaScript<br />
 Webpack
 
 ## Requirements
-Node.js
+[Node.js](https://nodejs.org/)
 
 ## Running the project
 
