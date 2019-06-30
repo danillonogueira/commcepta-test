@@ -13,16 +13,16 @@ export class Controller {
    * and displays it.
    */
   personClick(event) {
-    if (event.target.getAttribute('data-index')) {
+    if (event.target.hasAttribute('data-index')) {
       const id = parseInt(event.target.getAttribute('data-index'));
-      let dev = null;
+      let personReference = null;
   
-      require('../mocks/dados').forEach((developer) => {
-        if (developer.id === id) {
-          dev = developer;
+      require('../mocks/dados').forEach((person) => {
+        if (person.id === id) {
+          personReference = person;
         }
       });   
-      this._personView.update(dev);
+      this._personView.update(personReference);
     }
   }
 }
