@@ -9,8 +9,9 @@ export class Controller {
   }
 
   /**
-   * Checks whether user clicked on a person
-   * and displays it.
+   * Checks whether user clicked on a person,
+   * iterates through api data
+   * and updates display view.
    */
   personClick(event) {
     if (event.target.hasAttribute('data-index')) {
