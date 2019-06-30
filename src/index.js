@@ -1,14 +1,14 @@
-import api from './api/dados.json';
+import api from './mocks/dados.json';
 import './styles/main.scss';
 
 const $ = document.querySelector.bind(document);
 const list = $('.list');
 
-function formatPhoto(name) {
+function changeExtension(name) {
   return `${name.slice(0, name.length - 4)}.png`;
 }
 
-function clickDev(event) {
+function personClick(event) {
   if (event.target.getAttribute('data-index')) {
     const id = parseInt(event.target.getAttribute('data-index'));
     let dev = null;
@@ -19,7 +19,7 @@ function clickDev(event) {
       }
     });   
     $('.display').innerHTML = `
-      <img src="${require(`./assets/${formatPhoto(dev.foto)}`)}">
+      <img src="${require(`./assets/${changeExtension(dev.foto)}`)}">
       <div class="display__info">
         <ul>
           <li>NOME:</li>
@@ -42,9 +42,16 @@ list.innerHTML =
     api.map((developer) => {
       return `
         <label>
-          <input type="radio" name="developers" data-index="${developer.id}">
-          <div class="card" id="${developer.nome}">          
-            <img src="${require(`./assets/${formatPhoto(developer.foto)}`)}">
+          <input 
+            type="radio" 
+            name="developers" 
+            data-index="${developer.id}"
+          >
+          <div 
+            class="card" 
+            id="${developer.nome}"
+          >          
+            <img src="${require(`./assets/${changeExtension(developer.foto)}`)}">
             <div data-index="${developer.id}">        
               <ul data-index="${developer.id}">
                 <li>${developer.nome}</li>
@@ -58,5 +65,4 @@ list.innerHTML =
     .join('')
   }
 `;
-
-$('.list').addEventListener("change", clickDev);
+$('.list').addEventListener("change", personClick);

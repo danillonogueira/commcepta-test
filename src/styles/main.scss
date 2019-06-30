@@ -31,57 +31,56 @@ $palette: (
 }
 
 @mixin mobile {
-  @media(max-width: 375px) {
+  @media(max-width: 414px) {
     @content;
   }
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   display: flex;
-  justify-content: center; 
-  width: 100vw;
   height: 100vh; 
+  justify-content: center; 
+  width: 100vw; 
 }
 
 .container {
-  height: 100%;
-  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
   position: fixed;
+  width: 100%; 
 }
 
 // HEADER
 .header {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   background: linear-gradient(90deg, color(primary), color(dark-primary));
+  display: flex;
+  justify-content: space-around; 
   min-height: 10%;
   width: 100%;
 
   @include iPadPro {
     justify-content: space-between;
     height: 5%;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 }
 
 .logo {
-  cursor: pointer;
   display: flex;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 18px;
 
   & div:nth-child(1) {
-    color: color(secondary);
     border: solid 4px;
+    color: color(secondary); 
     padding: 12px;
 
     @include mobile {
@@ -90,24 +89,24 @@ body {
   }
 
   & div:nth-child(2) {
-    display: flex;
     align-items: center;
     background: color(secondary);
     color: color(primary-logo);
+    display: flex; 
     padding: 12px;
   }
 
   @include mobile {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 
 .nav {
+  align-items: center;
+  color: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   text-transform: uppercase;
-  color: #fff;
   width: 17%;
 
   & span:hover {
@@ -123,32 +122,31 @@ body {
   }
 
   @include mobile {
-    width: 180px;
     font-size: 10px;
+    width: 170px;   
   }
 }
 
 // CANVAS
 .canvas {
-  display: flex;
   align-items: center;
+  background: #eee;
+  display: flex;
   flex-direction: column;
   height: 90%;
-  background: #eee;
   width: 100%;
 }
 
 // DISPLAY
 .display {
-  display: flex;
   align-items: center;
   background: #fff;
   box-shadow: 0px 1px 5px #BDBDBD; 
-  width: 63%;
-  min-height: 140px;
+  display: flex;
   margin: 20px 0;
+  min-height: 140px;
   padding: 0 20px;
-  z-index: 1;
+  width: 63%;
 
   & img {
     transform: scale(.8);
@@ -159,45 +157,62 @@ body {
     width: 140px;
 
     & ul:nth-child(1) {
+      color: color(secondary-text);
       list-style-type: none;
       text-align: right;
-      width: 50%;
-      color: color(secondary-text);
+      width: 50%; 
+
+      @include mobile {
+        text-align: left;
+      }
     }
 
     & ul:nth-child(2) {
-      padding: 0 10px;
-      list-style-type: none;
-      width: 50%;
-      font-weight: bold;
       color: color(secondary);
+      font-weight: bold;
+      list-style-type: none;
+      padding: 0 10px;
+      width: 50%;
+
+      @include mobile {
+        padding: 0;
+      }
     }
 
     & li {
       margin: 10px 0;
     }
+
+    @include mobile {
+      font-size: 12px;
+      width: 100px;
+    }
   }
 
   @include iPadPro {
-    width: 100%;
-    margin: 0;
     height: 150px;
+    margin: 0;
+    width: 100%;
+  }
+
+  @include mobile {
+    justify-content: center;
+    padding: 0;
   }
 }
 
 // LIST
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 20px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 63%;
-  z-index: 0;
 
   @include iPadPro {
+    margin: 0;
+    overflow-y: scroll;
     padding: 10px;
     width: 100%;
-    margin: 0;
-    overflow: scroll;
   }
 
   @include iPad {
@@ -206,10 +221,10 @@ body {
 }
 
 .card {
-  background: #fff;
-  display: flex;
   align-items: center;
+  background: #fff;
   box-shadow: 0px 1px 5px #BDBDBD;
+  display: flex;
   transition: background .3s;
 
   & ul {
@@ -217,8 +232,8 @@ body {
   }
 
   & li:nth-child(1) {
-    font-weight: bold;
     color: color(primary-text);
+    font-weight: bold;  
   }
 
   & li:nth-child(2) {
