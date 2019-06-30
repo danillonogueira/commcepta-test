@@ -1,0 +1,20 @@
+@import  '../helpers/mixins.scss';
+@import '../helpers/functions.scss';
+
+.list {
+  display: grid;
+  grid-gap: 20px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 63%;
+
+  @include iPadPro {
+    margin: 0;
+    overflow-y: scroll;
+    padding: 10px;
+    width: 100%;
+  }
+
+  @include iPad {
+    grid-gap: 0;
+  }
+}

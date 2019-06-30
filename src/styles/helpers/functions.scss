@@ -1,0 +1,5 @@
+@import './palette.scss';
+
+@function color($color-name) {
+  @return map-get($palette, $color-name);
+}

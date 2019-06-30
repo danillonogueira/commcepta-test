@@ -1,0 +1,23 @@
+@mixin fixNavBreakpoint {
+  @media(max-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin iPadPro {
+  @media(max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin iPad {
+  @media(max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media(max-width: 414px) {
+    @content;
+  }
+}

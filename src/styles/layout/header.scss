@@ -1,0 +1,17 @@
+@import  '../helpers/mixins.scss';
+@import '../helpers/functions.scss';
+
+.header {
+  align-items: center;
+  background: linear-gradient(90deg, color(primary), color(dark-primary));
+  display: flex;
+  justify-content: space-around; 
+  min-height: 10%;
+  width: 100%;
+
+  @include iPadPro {
+    justify-content: space-between;
+    height: 5%;
+    padding: 0 20px;
+  }
+}
