@@ -7,9 +7,9 @@ export class PersonView extends View {
         <img src="${require(`../assets/${changeExtension(model.foto)}`)}">
         <div class="display__info">
           <ul>
-            <li>NOME:</li>
-            <li>CARGO:</li>
-            <li>IDADE:</li>
+            <li>nome:</li>
+            <li>cargo:</li>
+            <li>idade:</li>
           </ul>
           <ul>
             <li>${model.nome}</li>
