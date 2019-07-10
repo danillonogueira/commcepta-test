@@ -7,7 +7,7 @@
   font-weight: bold;
   text-transform: uppercase;
 
-  & div:nth-child(1) {
+  & span:nth-child(1) {
     border: solid 4px;
     color: color(secondary); 
     padding: 12px;
@@ -17,7 +17,7 @@
     }
   }
 
-  & div:nth-child(2) {
+  & span:nth-child(2) {
     align-items: center;
     background: color(secondary);
     color: color(primary-logo);

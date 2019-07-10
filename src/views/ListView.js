@@ -10,16 +10,16 @@ export class ListView extends View {
             <label>
               <input 
                 type="radio" 
-                name="developers" 
-                data-index="${person.id}"
+                name="developers"
+                data-index="${person.id}" 
               >
               <div 
                 class="card" 
-                id="${person.nome}"
+                id="${person.nome}"            
               >          
                 <img src="${require(`../assets/${changeExtension(person.foto)}`)}">
-                <div data-index="${person.id}">        
-                  <ul data-index="${person.id}">
+                <div>        
+                  <ul>
                     <li>${person.nome}</li>
                     <li>${person.cargo}</li>          
                   </ul>
